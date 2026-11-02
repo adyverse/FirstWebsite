@@ -33,3 +33,5 @@ Open `index.html` in a browser, or run `npx serve .`
 
 ## Deploy
 Push to GitHub, then enable **Settings → Pages → Deploy from branch (main, root)**, or import the repo on Netlify/Vercel.
+## Try It Out
+https://adyverse.github.io/FirstWebsite/
