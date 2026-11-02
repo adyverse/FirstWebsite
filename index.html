@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Discover, search and register for upcoming events.">
+<title>Stubby – Find your next event</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home">Stubby</a>
+  <nav id="menu" aria-label="Main">
+    <a href="#events">Events</a><a href="#register">Register</a><a href="#my">My tickets</a>
+  </nav>
+  <button id="theme" class="icon-btn" aria-label="Switch theme">🌙</button>
+  <button id="burger" class="icon-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Your next great night out is on the list.</h1>
+    <p>Browse workshops, concerts, hackathons and more. Pick one, register in under a minute, and get your ticket ID instantly.</p>
+    <a class="btn" href="#events">Browse events</a>
+  </div>
+  <div class="ticket-hero" aria-live="off">
+    <p class="small">Next up</p>
+    <h2 id="heroName">Loading…</h2>
+    <p id="heroMeta" class="small"></p>
+    <div class="cd" id="heroCd"></div>
+    <button class="btn alt" id="heroBtn">See details</button>
+  </div>
+</section>
+
+<section id="events" class="wrap">
+  <h2>Upcoming events</h2>
+  <div class="tools">
+    <input id="search" type="search" placeholder="Search by name, venue or keyword" aria-label="Search events">
+    <div id="chips" class="chips" role="group" aria-label="Filter by category"></div>
+  </div>
+  <p id="count" class="small"></p>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="register" class="wrap narrow">
+  <h2>Register for an event</h2>
+  <form id="form" novalidate>
+    <label>Full name<input id="name" autocomplete="name" placeholder="Aditya Maiti"><span class="err" id="e-name"></span></label>
+    <label>Email address<input id="email" type="email" autocomplete="email" placeholder="you@example.com"><span class="err" id="e-email"></span></label>
+    <label>Phone number<input id="phone" type="tel" autocomplete="tel" placeholder="9876543210" maxlength="14"><span class="err" id="e-phone"></span></label>
+    <label>Event<select id="event"></select><span class="err" id="e-event"></span></label>
+    <button class="btn" type="submit">Get my ticket</button>
+  </form>
+  <div id="ok" class="ok" hidden role="status"></div>
+</section>
+
+<section id="my" class="wrap narrow">
+  <h2>My tickets</h2>
+  <div id="tickets"></div>
+</section>
+</main>
+
+<footer>Built with HTML, CSS and JavaScript. Registrations are saved in your browser only.</footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="icon-btn close" id="mClose" aria-label="Close">✕</button>
+    <div id="mCover" class="cover big"></div>
+    <div class="sheet-body">
+      <h3 id="mTitle"></h3>
+      <p id="mMeta" class="small"></p>
+      <div class="cd" id="mCd"></div>
+      <p id="mDesc"></p>
+      <button class="btn" id="mReg">Register for this event</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
